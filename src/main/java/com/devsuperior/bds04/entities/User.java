@@ -1,10 +1,7 @@
 package com.devsuperior.bds04.entities;
 
 import jakarta.persistence.*;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
 
-import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -58,5 +55,22 @@ public class User{
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void addRole(Role role){
+        roles.add(role);
+    }
+
+    public boolean hasRole(String roleName){
+        for(Role role : roles){
+            if(role.getAuthority().equals(roleName)){
+                return true;
+            }
+        }
+        return false;
     }
 }
