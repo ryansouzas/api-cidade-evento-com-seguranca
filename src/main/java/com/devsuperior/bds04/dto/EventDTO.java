@@ -10,16 +10,9 @@ public class EventDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private Long id;
-
-    @NotBlank(message = "Campo Requerido")
 	private String name;
-
-    @FutureOrPresent(message = "A data do evento não pode ser passada")
 	private LocalDate date;
-
     private String url;
-
-    @NotNull(message = "Campo requerido")
 	private Long cityId;
 	
 	public EventDTO() {
