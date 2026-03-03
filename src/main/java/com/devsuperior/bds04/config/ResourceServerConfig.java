@@ -86,4 +86,6 @@ public class ResourceServerConfig {
         bean.setOrder(Ordered.HIGHEST_PRECEDENCE);
         return bean;
     }
+
+
 }
